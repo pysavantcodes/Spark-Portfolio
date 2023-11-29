@@ -149,7 +149,7 @@ function App() {
         </div>
         <div className="flex-row flex justify-center gap-x-28 items-center max-md:flex-col p-5 max-md:py-10 pb-24 max-md:pb-[5rem] max-md:text-center gap-y-5">
           <div className="max-md:flex flex-col items-center">
-            <h1 className="text-[42px] leading-[45px] max-md:text-[30px] max-md:leading-[36px] font-bold">
+            <h1 className="text-[42px] leading-[45px] max-md:text-[30px] max-md:leading-[36px]">
               Spark Of Lagos |{" "}
               <TypeAnimation
                 sequence={["Film Maker", 4000, "VFX Artist", 4000]}
