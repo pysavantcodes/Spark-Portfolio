@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("../src/assets/fonts/Gotham-Bold.otf");
+}
+@font-face {
+  font-family: "Gotham-Medium";
+  src: url("../src/assets/fonts/GothamMedium.ttf");
+}
+@font-face {
+  font-family: "Gotham-Book";
+  src: url("../src/assets/fonts/GothamBook.ttf");
+}
+
+* {
+  color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:"Gotham-Medium", sans-serif;
+  letter-spacing: -1.5px;
+  vertical-align: baseline;
+  /* transition: .5s all; */
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background: #0f0f0f;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  
+}
+
+h1{
+    font-family:"Gotham-Bold", sans-serif;
+    letter-spacing: -1.5px;
+    vertical-align: baseline;
+}
+
+
