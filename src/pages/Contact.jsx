@@ -103,16 +103,9 @@ const Contact = () => {
             height="24"
           />
         </div>
-        <div className="w-full h-full items-center justify-center flex flex-col max-w-[700px] mx-auto p-10 pt-0 max-md:pt-10">
+        <div className="w-full items-center justify-center flex flex-col max-w-[700px] mx-auto p-10 pt-0 max-md:pt-10">
           <h1 className="text-[42px] leading-[45px] max-md:text-[30px] max-md:leading-[36px] font-semibold">
             Spark Of Lagos
-            {/* <TypeAnimation
-              sequence={["Film Maker", 4000, "VFX Artist", 4000]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-              cursor={false}
-            /> */}
           </h1>
           <p className="text-[22px] leading-[25px] opacity-70 max-md:pt-1 max-md:text-[17px] tracking-normal max-md:w-[90%]">
             contact me and let's work together
