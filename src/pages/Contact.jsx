@@ -3,7 +3,6 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import MenuToggle from "../components/MenuToggle";
-import { TypeAnimation } from "react-type-animation";
 
 const Contact = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -23,6 +22,7 @@ const Contact = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
+        style={{ overflowY: 'auto' }} 
         exit={{ opacity: 0 }}
         className="bg-[#0f0f0f] w-full h-full"
       >
@@ -147,6 +147,36 @@ const Contact = () => {
                 style={{ transition: ".3s all" }}
                 required
               />
+            </div>
+            <div className="">
+              <label htmlFor="message" className="block mb-2 text-sm">
+                Your message
+              </label>
+              <textarea
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                id="message"
+                rows="6"
+                className="block shadow-sm bg-white/[3%] border-[1px] border-white/20 focus:border-white/80 text-[16px] outline-none w-full p-4 placeholder:opacity-50 tracking-normal"
+                style={{ transition: ".3s all" }}
+                required
+                placeholder="Leave a comment..."
+              ></textarea>
+            </div>
+            <div className="">
+              <label htmlFor="message" className="block mb-2 text-sm">
+                Your message
+              </label>
+              <textarea
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                id="message"
+                rows="6"
+                className="block shadow-sm bg-white/[3%] border-[1px] border-white/20 focus:border-white/80 text-[16px] outline-none w-full p-4 placeholder:opacity-50 tracking-normal"
+                style={{ transition: ".3s all" }}
+                required
+                placeholder="Leave a comment..."
+              ></textarea>
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="message" className="block mb-2 text-sm">
