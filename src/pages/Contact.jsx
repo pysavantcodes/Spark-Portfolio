@@ -134,7 +134,7 @@ const Contact = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 id="email"
-                className="shadow-sm bg-white/[3%] border-[1px] border-white/20 focus:border-white/80 text-sm outline-none block w-full p-4 placeholder:opacity-50 tracking-normal"
+                className="shadow-sm bg-white/[3%] text-[16px] border-[1px] border-white/20 focus:border-white/80 text-sm outline-none block w-full p-4 placeholder:opacity-50 tracking-normal"
                 placeholder="name@flowbite.com"
                 style={{ transition: ".3s all" }}
                 required
@@ -149,7 +149,7 @@ const Contact = () => {
                 onChange={(e) => setSubject(e.target.value)}
                 type="subject"
                 id="subject"
-                className="shadow-sm bg-white/[3%] border-[1px] border-white/20 focus:border-white/80 text-sm outline-none block w-full p-4 placeholder:opacity-50 tracking-normal"
+                className="shadow-sm bg-white/[3%] text-[16px] border-[1px] border-white/20 focus:border-white/80 text-sm outline-none block w-full p-4 placeholder:opacity-50 tracking-normal"
                 placeholder="Let's talk!"
                 style={{ transition: ".3s all" }}
                 required
@@ -164,7 +164,7 @@ const Contact = () => {
                 onChange={(e) => setComment(e.target.value)}
                 id="message"
                 rows="6"
-                className="block shadow-sm bg-white/[3%] border-[1px] border-white/20 focus:border-white/80 text-sm outline-none w-full p-4 placeholder:opacity-50 tracking-normal"
+                className="block shadow-sm bg-white/[3%] border-[1px] border-white/20 focus:border-white/80 text-[16px] outline-none w-full p-4 placeholder:opacity-50 tracking-normal"
                 style={{ transition: ".3s all" }}
                 required
                 placeholder="Leave a comment..."
@@ -172,7 +172,7 @@ const Contact = () => {
             </div>
             <button
               style={{ transition: ".3s all" }}
-              className="p-3 px-7 text-[15px] border-[3px] cursor-pointer border-white tracking-wider text-bold hover:bg-[#ff9400] hover:border-[#ff9400] items-center hover:text-[#0f0f0f]"
+              className="p-3 px-7 flex text-[15px] border-[3px] cursor-pointer border-white tracking-wider text-bold hover:bg-[#ff9400] hover:border-[#ff9400] items-center hover:text-[#0f0f0f]"
               type="submit"
             >
               SUBMIT
