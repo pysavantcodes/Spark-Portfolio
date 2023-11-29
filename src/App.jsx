@@ -159,7 +159,7 @@ function App() {
                 cursor={false}
               />
             </h1>
-            <p className="text-[23px] leading-[25px] opacity-70 max-md:pt-3 max-md:text-[20px]">
+            <p className="text-[22px] leading-[25px] opacity-70 max-md:pt-3 max-md:text-[17px] tracking-normal max-md:w-[90%]">
               Design, craft & creativity for movies, games, advertising.
             </p>
             <div className="flex flex-row py-6 gap-x-3 max-md:items-center max-md:justify-center">
@@ -178,7 +178,7 @@ function App() {
             </div>
             <button
               style={{ transition: ".3s all" }}
-              className="group p-3 px-5 text-[15px] border-[3px] border-white tracking-wider text-bold hover:bg-[#ff9400] hover:border-[#ff9400] hover:text-[#0f0f0f] flex items-center gap-3"
+              className="group p-3 px-5 text-[15px] border-[3px] border-white tracking-widest text-bold hover:bg-[#ff9400] hover:border-[#ff9400] hover:text-[#0f0f0f] flex items-center gap-3"
             >
               <FaPlay className="group-hover:!text-[#0f0f0f] !text-white" size={12}/> SHOWREEL
             </button>

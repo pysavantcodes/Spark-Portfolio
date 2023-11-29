@@ -104,7 +104,7 @@ const Contact = () => {
           />
         </div>
         <div className="w-full h-full items-center justify-center flex flex-col max-w-[700px] mx-auto p-10 pt-0 max-md:pt-10">
-          <h1 className="text-[42px] leading-[48px] max-md:text-[30px] max-md:leading-[36px] text-center">
+          <h1 className="text-[42px] leading-[45px] max-md:text-[30px] max-md:leading-[36px] font-semibold">
             Spark Of Lagos
             {/* <TypeAnimation
               sequence={["Film Maker", 4000, "VFX Artist", 4000]}
@@ -114,7 +114,7 @@ const Contact = () => {
               cursor={false}
             /> */}
           </h1>
-          <p className="text-[29px] leading-[25px] max-md:pt-3 max-md:text-[20px] opacity-75">
+          <p className="text-[22px] leading-[25px] opacity-70 max-md:pt-1 max-md:text-[17px] tracking-normal max-md:w-[90%]">
             contact me and let's work together
           </p>
           <form
@@ -134,7 +134,7 @@ const Contact = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 id="email"
-                className="shadow-sm bg-white/[3%] text-[16px] border-[1px] border-white/20 focus:border-white/80 text-sm outline-none block w-full p-4 placeholder:opacity-50 tracking-normal"
+                className="shadow-sm bg-white/[3%] text-[16px] border-[1px] border-white/20 focus:border-white/80 outline-none block w-full p-4 placeholder:opacity-50 tracking-normal"
                 placeholder="name@flowbite.com"
                 style={{ transition: ".3s all" }}
                 required
@@ -149,7 +149,7 @@ const Contact = () => {
                 onChange={(e) => setSubject(e.target.value)}
                 type="subject"
                 id="subject"
-                className="shadow-sm bg-white/[3%] text-[16px] border-[1px] border-white/20 focus:border-white/80 text-sm outline-none block w-full p-4 placeholder:opacity-50 tracking-normal"
+                className="shadow-sm bg-white/[3%] border-[1px] border-white/20 focus:border-white/80 text-[16px] outline-none block w-full p-4 placeholder:opacity-50 tracking-normal"
                 placeholder="Let's talk!"
                 style={{ transition: ".3s all" }}
                 required
