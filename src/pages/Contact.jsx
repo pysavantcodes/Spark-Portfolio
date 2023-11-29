@@ -163,36 +163,6 @@ const Contact = () => {
                 placeholder="Leave a comment..."
               ></textarea>
             </div>
-            <div className="">
-              <label htmlFor="message" className="block mb-2 text-sm">
-                Your message
-              </label>
-              <textarea
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-                id="message"
-                rows="6"
-                className="block shadow-sm bg-white/[3%] border-[1px] border-white/20 focus:border-white/80 text-[16px] outline-none w-full p-4 placeholder:opacity-50 tracking-normal"
-                style={{ transition: ".3s all" }}
-                required
-                placeholder="Leave a comment..."
-              ></textarea>
-            </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="message" className="block mb-2 text-sm">
-                Your message
-              </label>
-              <textarea
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-                id="message"
-                rows="6"
-                className="block shadow-sm bg-white/[3%] border-[1px] border-white/20 focus:border-white/80 text-[16px] outline-none w-full p-4 placeholder:opacity-50 tracking-normal"
-                style={{ transition: ".3s all" }}
-                required
-                placeholder="Leave a comment..."
-              ></textarea>
-            </div>
             <button
               style={{ transition: ".3s all" }}
               className="p-3 px-7 flex text-[15px] border-[3px] cursor-pointer border-white tracking-wider text-bold hover:bg-[#ff9400] hover:border-[#ff9400] items-center hover:text-[#0f0f0f]"
