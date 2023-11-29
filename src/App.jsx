@@ -183,7 +183,7 @@ function App() {
             </button>
           </div>
           <img
-            src="https://media.licdn.com/dms/image/C4D03AQEshb4PBwdIQQ/profile-displayphoto-shrink_800_800/0/1625645667953?e=1699488000&v=beta&t=YcXmZUhJSw-Z0lHNhJNicVdOOZqu604kknQ8oa-G3Lk"
+            src="https://bafybeiahqefmgkwg44wuza67emjpdti3h265rwe2uuhsoygbrb5le77v3y.ipfs.w3s.link/1625645674998.jpg"
             alt=""
             className="w-[170px] h-[170px] max-md:w-[150px] max-md:h-[150px] object-cover rounded-full pointer-events-none select-none max-md:hidden"
           />

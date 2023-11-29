@@ -46,7 +46,7 @@ const CaseStudy = () => {
               <motion.span
                 onClick={() => {
                   toggleOpen();
-                  navigate("/");
+                  navigate("/casestudies");
                 }}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -66,6 +66,10 @@ const CaseStudy = () => {
                 transition={{ delay: 0.2, ease: "linear" }}
                 href="#0"
                 className="hover:text-[#ff9400]"
+                onClick={() => {
+                  toggleOpen();
+                  navigate("/contact");
+                }}
               >
                 <h3
                   style={{ transition: ".5s all" }}
