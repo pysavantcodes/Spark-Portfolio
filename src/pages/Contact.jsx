@@ -12,9 +12,9 @@ const Contact = () => {
   const [comment, setComment] = useState("");
   const navigate = useNavigate();
 
-  const submitForm = (e)=>{
-    e.preventDefault()
-  }
+  const submitForm = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <AnimatePresence>
@@ -117,9 +117,16 @@ const Contact = () => {
           <p className="text-[29px] leading-[25px] max-md:pt-3 max-md:text-[20px] opacity-75">
             contact me and let's work together
           </p>
-          <form action="#" onSubmit={submitForm} class="space-y-5 w-full mt-10">
+          <form
+            action="#"
+            onSubmit={submitForm}
+            className="space-y-5 w-full mt-10"
+          >
             <div>
-              <label for="email" className="block mb-2 text-sm tracking-normal">
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm tracking-normal"
+              >
                 Your email
               </label>
               <input
@@ -134,7 +141,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label for="subject" className="block mb-2 text-sm">
+              <label htmlFor="subject" className="block mb-2 text-sm">
                 Subject
               </label>
               <input
@@ -148,8 +155,8 @@ const Contact = () => {
                 required
               />
             </div>
-            <div class="sm:col-span-2">
-              <label for="message" className="block mb-2 text-sm">
+            <div className="sm:col-span-2">
+              <label htmlFor="message" className="block mb-2 text-sm">
                 Your message
               </label>
               <textarea
@@ -163,13 +170,12 @@ const Contact = () => {
                 placeholder="Leave a comment..."
               ></textarea>
             </div>
-            <button type="submit">
-              <a
-                style={{ transition: ".3s all" }}
-                className="p-3 px-7 text-[15px] border-[3px] cursor-pointer border-white tracking-wider text-bold hover:bg-[#ff9400] hover:border-[#ff9400] items-center hover:text-[#0f0f0f]"
-              >
-                SUBMIT
-              </a>
+            <button
+              style={{ transition: ".3s all" }}
+              className="p-3 px-7 text-[15px] border-[3px] cursor-pointer border-white tracking-wider text-bold hover:bg-[#ff9400] hover:border-[#ff9400] items-center hover:text-[#0f0f0f]"
+              type="submit"
+            >
+              SUBMIT
             </button>
           </form>
         </div>

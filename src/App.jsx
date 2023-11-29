@@ -4,12 +4,13 @@ import { TypeAnimation } from "react-type-animation";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import MenuToggle from "./components/MenuToggle";
-import { IoIosMail } from "react-icons/io";
+import { IoIosMail, IoMdPlay } from "react-icons/io";
 import { SiOpensea } from "react-icons/si";
 import { FiArrowUpRight } from "react-icons/fi";
 import {
   FaInstagram,
   FaLinkedinIn,
+  FaPlay,
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -139,7 +140,7 @@ function App() {
           <MenuToggle
             isOpen={isOpen}
             onClick={() => toggleOpen()}
-            strokeWidth="2.5"
+            strokeWidth="1.5"
             color="white"
             transition={{ ease: "easeOut", duration: 0.2 }}
             width="45"
@@ -147,8 +148,8 @@ function App() {
           />
         </div>
         <div className="flex-row flex justify-center gap-x-28 items-center max-md:flex-col p-5 max-md:py-10 pb-24 max-md:pb-[5rem] max-md:text-center gap-y-5">
-          <div>
-            <h1 className="text-[42px] leading-[48px] max-md:text-[30px] max-md:leading-[36px]">
+          <div className="max-md:flex flex-col items-center">
+            <h1 className="text-[42px] leading-[45px] max-md:text-[30px] max-md:leading-[36px]">
               Spark Of Lagos |{" "}
               <TypeAnimation
                 sequence={["Film Maker", 4000, "VFX Artist", 4000]}
@@ -166,7 +167,7 @@ function App() {
                 return (
                   <a
                     style={{ transition: ".3s all" }}
-                    className="bg-white/10 p-3 flex rounded-full items-center justify-center hover:bg-white/[15%] hover:text-black"
+                    className="bg-white/10 p-3 flex rounded-full items-center justify-center hover:bg-white/[15%] hover:text-[#ff9400]"
                     key={index}
                     href={link.link}
                   >
@@ -177,9 +178,9 @@ function App() {
             </div>
             <button
               style={{ transition: ".3s all" }}
-              className="p-3 px-5 text-[15px] border-[3px] border-white tracking-wider text-bold hover:bg-[#ff9400] hover:border-[#ff9400] hover:text-[#0f0f0f]"
+              className="group p-3 px-5 text-[15px] border-[3px] border-white tracking-wider text-bold hover:bg-[#ff9400] hover:border-[#ff9400] hover:text-[#0f0f0f] flex items-center gap-3"
             >
-              &#9654; &nbsp; SHOWREEL
+              <FaPlay className="group-hover:!text-[#0f0f0f] !text-white" size={12}/> SHOWREEL
             </button>
           </div>
           <img
