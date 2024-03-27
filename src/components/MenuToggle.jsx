@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const MenuToggle = ({
   isOpen = false,
   width = 24,
-  height = 24,
+  height = 12,
   strokeWidth = 1,
   color = "#000",
   transition = null,
@@ -59,7 +59,7 @@ const MenuToggle = ({
       overflow="visible"
       preserveAspectRatio="none"
       width={width}
-      height={height}className={"max-md:w-[35px] max-md:h-[20px]"}
+      height={height}className={"max-md:w-[35px] max-md:h-[12px]"}
       {...props}
     >
       <motion.line
@@ -70,14 +70,14 @@ const MenuToggle = ({
         variants={top}
         {...lineProps}
       />
-      <motion.line
+      {/* <motion.line
         x1="0"
         x2={unitWidth}
         y1="2"
         y2="2"
         variants={center}
         {...lineProps}
-      />
+      /> */}
       <motion.line
         x1="0"
         x2={unitWidth}

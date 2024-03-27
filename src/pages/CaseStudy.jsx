@@ -1,12 +1,36 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
+import { useLocation, useParams } from "react-router-dom";
+import { data } from "../utils/data";
+import { useEffect } from "react";
+import { FiExternalLink } from "react-icons/fi";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { motion, AnimatePresence, useCycle } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import MenuToggle from "../components/MenuToggle";
 
 const CaseStudy = () => {
-    const [isOpen, toggleOpen] = useCycle(false, true);
-  const navigate = useNavigate();
+  const { id } = useParams();
+  const details = data.filter((d) => d.title.toLowerCase() == id)[0];
+
+  if (!details) {
+    return (
+      <AnimatePresence>
+        <motion.section
+          id="body"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          exit={{ opacity: 0 }}
+          className="bg-[#0f0f0f] w-full h-full"
+        >
+          <div className="px-10 max-md:px-5">
+            <h1 className="text-[100px] text-right max-xl:text-[80px] max-lg:text-[60px] leading-[1.15] max-md:text-[40px] font-bold uppercase">
+              Page Does not exist
+            </h1>
+          </div>
+        </motion.section>
+      </AnimatePresence>
+    );
+  }
+
   return (
     <AnimatePresence>
       <motion.section
@@ -17,82 +41,72 @@ const CaseStudy = () => {
         exit={{ opacity: 0 }}
         className="bg-[#0f0f0f] w-full h-full"
       >
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              style={{ zIndex: 99 }}
-              className="w-full h-full fixed top-0 left-0  bg-[#0f0f0f] flex items-center justify-center flex-col gap-y-1"
-            >
-              <motion.span
-                onClick={() => {
-                  toggleOpen();
-                  navigate("/");
-                }}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.1, ease: "linear" }}
-                className="hover:text-[#ff9400] cursor-pointer"
-              >
-                <h3
-                  style={{ transition: ".5s all" }}
-                  className="text-[45px] uppercase hover:text-[#ff9400] max-md:text-[25px]"
-                >
-                  Home
-                </h3>
-              </motion.span>
-              <motion.span
-                onClick={() => {
-                  toggleOpen();
-                  navigate("/casestudies");
-                }}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.1, ease: "linear" }}
-                className="hover:text-[#ff9400] cursor-pointer"
-              >
-                <h3
-                  style={{ transition: ".5s all" }}
-                  className="text-[45px] uppercase hover:text-[#ff9400] max-md:text-[25px]"
-                >
-                  Case Study
-                </h3>
-              </motion.span>
-              <motion.a
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, ease: "linear" }}
-                href="#0"
-                className="hover:text-[#ff9400]"
-                onClick={() => {
-                  toggleOpen();
-                  navigate("/contact");
-                }}
-              >
-                <h3
-                  style={{ transition: ".5s all" }}
-                  className="text-[45px] uppercase hover:text-[#ff9400] max-md:text-[25px]"
-                >
-                  Contact
-                </h3>
-              </motion.a>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <div className="flex-row flex w-full p-10 max-md:p-7 justify-between items-center">
-          <h3 style={{ zIndex: 9999 }}>SOL</h3>
-          <MenuToggle
-            isOpen={isOpen}
-            onClick={() => toggleOpen()}
-            strokeWidth="2.5"
-            color="white"
-            transition={{ ease: "easeOut", duration: 0.2 }}
-            width="45"
-            height="24"
-          />
+        <div className="px-10 max-md:px-5 py-10 ">
+          <div className="flex max-md:flex-col gap-10 max-md:gap-5 justify-between">
+            <div>
+              <h1 className="text-[80px] max-xl:text-[70px] max-lg:text-[60px] leading-[1.15] max-md:text-[40px] font-bold">
+                {details.title}
+              </h1>
+              <p className=" tracking-normal text-[20px] max-md:text-[16px] font-semibold opacity-40 mt-2 md:max-w-[70%]">
+                {details.brief}
+              </p>
+            </div>
+            <div className="flex flex-col justify-between items-end max-md:flex-row max-md:items-center">
+              {details.link && (
+                <a target="_blank" href={details.link}>
+                  <FiExternalLink size={30} />
+                </a>
+              )}
+              {details.tag.includes("•") ? (
+                <div className="flex flex-nowrap gap-2">
+                  {details.tag.split("•").map((data) => {
+                    return (
+                      <p className=" tracking-normal text-lg max-md:text-sm border p-2 px-5 rounded-full">
+                        {data}
+                      </p>
+                    );
+                  })}
+                </div>
+              ) : (
+                <p className=" tracking-normal text-lg max-md:text-sm border p-2 px-5 rounded-full">
+                  {details.tag}
+                </p>
+              )}
+            </div>
+          </div>
         </div>
+        <ResponsiveMasonry
+          id="works"
+          columnsCountBreakPoints={{ 350: 1, 750: 2, 1180: 3 }}
+          className=""
+        >
+          <Masonry className=" mt-10">
+            {details.images.map((image, i) => (
+              <motion.div
+                className="relative overflow-hidden group border border-black"
+                key={i}
+                initial={{ opacity: 0 }}
+                viewport={{ once: true, amount: 0.8 }}
+                whileInView={{
+                  opacity: 1,
+                  transition: { delay: i * 0.2, ease: "easeIn" },
+                }}
+              >
+                <img
+                  src={image}
+                  style={{
+                    width: "100%",
+                    display: "block",
+                    // maxHeight: "300px",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                  alt=""
+                />
+              </motion.div>
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
       </motion.section>
     </AnimatePresence>
   );
