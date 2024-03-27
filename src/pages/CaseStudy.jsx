@@ -82,15 +82,9 @@ const CaseStudy = () => {
         >
           <Masonry className=" mt-10">
             {details.images.map((image, i) => (
-              <motion.div
+              <div
                 className="relative overflow-hidden group border border-black"
                 key={i}
-                initial={{ opacity: 0 }}
-                viewport={{ once: true, amount: 0.8 }}
-                whileInView={{
-                  opacity: 1,
-                  transition: { delay: i * 0.2, ease: "easeIn" },
-                }}
               >
                 <img
                   src={image}
@@ -103,7 +97,7 @@ const CaseStudy = () => {
                   }}
                   alt=""
                 />
-              </motion.div>
+              </div>
             ))}
           </Masonry>
         </ResponsiveMasonry>

@@ -48,15 +48,9 @@ const CaseStudies = () => {
               >
                 <Masonry className=" pt-0">
                   {items.map((work, i) => (
-                    <motion.div
+                    <div
                       className="relative overflow-hidden h-[450px] max-md:h-fit max-md:max-h-[450px] group"
                       key={i}
-                      initial={{ opacity: 0 }}
-                      viewport={{ once: true, amount: 0.8 }}
-                      whileInView={{
-                        opacity: 1,
-                        transition: { delay: i * 0.2, ease: "easeIn" },
-                      }}
                     >
                       <Link
                         to={`/casestudies/${work.title.toLowerCase()}`}
@@ -88,7 +82,7 @@ const CaseStudies = () => {
                         }}
                         alt=""
                       />
-                    </motion.div>
+                    </div>
                   ))}
                 </Masonry>
               </ResponsiveMasonry>

@@ -125,7 +125,7 @@ function App() {
           {/* ?autoplay=1&loop=1&autopause=0 */}
           <div className="embed-container mt-10 max-md:mt-4">
             <iframe
-              src="https://player.vimeo.com/video/738460924"
+              src="https://player.vimeo.com/video/738460924?autoplay=1&loop=1&autopause=0"
               width="100%"
               allow="autoplay; fullscreen"
               allowFullScreen
