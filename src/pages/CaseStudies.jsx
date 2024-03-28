@@ -24,7 +24,7 @@ const CaseStudies = () => {
         exit={{ opacity: 0 }}
         className="bg-[#0f0f0f] w-full h-full"
       >
-        <div className="px-10 max-md:px-5">
+        <div className="px-10 max-md:px-5 pt-10">
           <h1 className="text-[100px] text-right max-xl:text-[80px] max-lg:text-[60px] leading-[1.15] max-md:text-[40px] font-bold">
             Case Studies
           </h1>

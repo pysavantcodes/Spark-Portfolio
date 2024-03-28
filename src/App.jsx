@@ -95,15 +95,17 @@ function App() {
         <header className="gap-x-28 items-center max-md:flex-col max-md:text-center gap-y-5 relative ">
           <div className="flex justify-between p-10 items-end z-[20] max-md:px-5 mix-blend-difference w-full max-[1179px]:flex-col max-[1179px]:items-start max-[1179px]:gap-5">
             <div>
-              <h1 className="text-[100px] max-xl:text-[80px] max-lg:text-[60px] leading-[1.15] max-md:text-[40px] font-bold pl-[48px] max-md:pl-[30px]">
+              <h1 className="text-[100px] max-xl:text-[80px] max-lg:text-[60px] leading-[1.15] max-md:text-[40px] font-bold pl-[48px] max-md:pl-[0px]">
                 Spark Of Lagos
               </h1>
               <div className="flex items-center gap-5 max-md:gap-4 mt-1.5">
                 <div className="w-[30px] h-[30px] max-md:w-[15px] max-md:h-[15px] bg-white rounded-full"></div>
-                <div className="text-[100px] max-md:text-[40px] font-bold opacity-40 v-slides h-[100px] leading-[80px] max-md:leading-[40px] max-md:h-[40px] overflow-hidden text-left max-xl:text-[80px] max-lg:text-[60px] max-lg:h-[60px] max-lg:leading-[60px]">
-                  <h1 className="v-slide h-[80px]">VFX Artist</h1>
-                  <h1 className=" h-[100px] mt-4">Film Maker</h1>
-                  <h1 className=" h-[100px] ">CGI Artist</h1>
+                <div className="text-[100px] max-md:text-[40px] font-bold opacity-40  h-[100px] leading-[80px] max-md:leading-[40px] max-md:h-[40px] overflow-hidden text-left max-xl:text-[80px] max-lg:text-[60px] max-lg:h-[60px] max-lg:leading-[60px]">
+                  <h1 className="v-slides">Creative Director</h1>
+                  <h1 className="v-slides">Post Production</h1>
+                  <h1 className="v-slides">CGI</h1>
+                  <h1 className="v-slides ">AI</h1>
+                  <h1 className="v-slides">Visual Effect</h1>
                 </div>
               </div>
             </div>
@@ -135,11 +137,11 @@ function App() {
         <div className="p-[100px]  max-2xl:px-[70px] py-[150px] flex justify-end max-md:justify-start max-md:px-10 max-md:py-[120px]">
           <h1
             id="text-anim"
-            className="font-semibold text-[80px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[30px] max-md:w-full leading-tight w-[70%] text-white/10"
+            className="font-semibold text-[80px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[30px] max-md:w-full leading-tight w-[70%] text-white/10 text-right"
           >
             Empowering brands to expand by crafting captivating, scroll-stopping
-            content, enhancing their visibility and engagement with expert VFX
-            artistry.
+            content, enhancing their visibility and engagement with expert post
+            production artistry.
           </h1>
         </div>
         <div>
@@ -152,7 +154,7 @@ function App() {
             className=""
           >
             <Masonry className=" pt-0">
-              {data.slice(0,6).map((work, i) => (
+              {data.slice(0, 6).map((work, i) => (
                 <motion.div
                   className="relative overflow-hidden h-[450px] max-md:h-fit max-md:max-h-[450px] group"
                   key={i}
@@ -196,8 +198,13 @@ function App() {
             </Masonry>
           </ResponsiveMasonry>
           <div className="flex items-center justify-center p-10">
-            <Link to="/casestudies" className="button text-[17px] border border-white flex items-center justify-center">
-              <span className="button-content tracking-wide font-semibold">View All Works </span>
+            <Link
+              to="/casestudies"
+              className="button text-[17px] border border-white flex items-center justify-center"
+            >
+              <span className="button-content tracking-wide font-semibold">
+                View All Works{" "}
+              </span>
             </Link>
           </div>
         </div>

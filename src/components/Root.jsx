@@ -58,7 +58,7 @@ const Root = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               style={{ zIndex: 99 }}
-              className="w-full h-full fixed top-0 left-0  bg-[#0f0f0f] flex items-end justify-center flex-col gap-y-2"
+              className="w-full h-full fixed top-0 left-0  bg-[#0f0f0f] flex items-center justify-center flex-col gap-y-2"
             >
               <motion.span
                 onClick={() => {
@@ -72,7 +72,7 @@ const Root = () => {
               >
                 <h3
                   style={{ transition: ".5s all" }}
-                  className="text-[55px] hover:text-[#ff9400] max-md:text-[35px] font-semibold mr-10 max-md:mr-5"
+                  className="text-[55px] hover:text-[#ff9400] max-md:text-[35px] font-semibold "
                 >
                   Home
                 </h3>
@@ -89,7 +89,7 @@ const Root = () => {
               >
                 <h3
                   style={{ transition: ".5s all" }}
-                  className="text-[55px] hover:text-[#ff9400] max-md:text-[35px] font-semibold mr-10 max-md:mr-5"
+                  className="text-[55px] hover:text-[#ff9400] max-md:text-[35px] font-semibold "
                 >
                   Case Studies
                 </h3>
@@ -107,9 +107,9 @@ const Root = () => {
               >
                 <h3
                   style={{ transition: ".5s all" }}
-                  className="text-[55px] hover:text-[#ff9400] max-md:text-[35px] font-semibold mr-10 max-md:mr-5"
+                  className="text-[55px] hover:text-[#ff9400] max-md:text-[35px] font-semibold "
                 >
-                  Contact
+                  Let's Talk
                 </h3>
               </motion.a>
             </motion.div>

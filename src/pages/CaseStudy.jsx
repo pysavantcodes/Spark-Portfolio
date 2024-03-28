@@ -53,8 +53,8 @@ const CaseStudy = () => {
             </div>
             <div className="flex flex-col justify-between items-end max-md:flex-row max-md:items-center">
               {details.link && (
-                <a target="_blank" href={details.link}>
-                  <FiExternalLink size={30} />
+                <a className="menu__link flex items-center gap-3" target="_blank" href={details.link}>
+                  <span className=" tracking-normal">Take a Look</span><FiExternalLink size={20} />
                 </a>
               )}
               {details.tag.includes("•") ? (

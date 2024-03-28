@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import MenuToggle from "../components/MenuToggle";
 
 const Contact = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [comment, setComment] = useState("");
@@ -22,42 +19,47 @@ const Contact = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        style={{ overflowY: 'auto' }} 
+        style={{ overflowY: "auto" }}
         exit={{ opacity: 0 }}
-        className="bg-[#0f0f0f] w-full h-full"
+        className="bg-[#0f0f0f] w-full h-full py-24 max-md:py-0"
       >
-        <div className="w-full items-center justify-center flex flex-col max-w-[700px] mx-auto p-10 pt-0 max-md:pt-10">
-          <h1 className="text-[42px] leading-[45px] max-md:text-[30px] max-md:leading-[36px] font-semibold">
-            Spark Of Lagos
-          </h1>
-          <p className="text-[22px] leading-[25px] opacity-70 max-md:pt-1 max-md:text-[17px] tracking-normal max-md:w-[90%]">
-            contact me and let's work together
-          </p>
+        <div className="w-full items-center justify-center flex max-w-[1600px] mx-auto p-10 pt-0 max-md:pt-10 max-[1000px]:flex-col max-[1000px]:gap-10">
+          <div className="w-[70%] max-[1000px]:w-full">
+            <h1 className="text-[120px] max-xl:text-[80px] max-lg:text-[60px] leading-[1.15] max-md:text-[40px] font-bold">
+              Let's Talk
+            </h1>
+            <p className="text-[22px] leading-[25px] opacity-70 max-md:pt-1 max-md:text-[17px] tracking-normal max-md:w-[90%]">
+              contact me and let's work together
+            </p>
+          </div>
           <form
             action="#"
             onSubmit={submitForm}
-            className="space-y-5 w-full mt-10"
+            className="space-y-5 w-[70%] max-[1000px]:w-full"
           >
             <div>
               <label
-                htmlFor="email"
+                htmlFor="name"
                 className="block mb-2 text-sm tracking-normal"
               >
-                Your email
+                Your Name
               </label>
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                type="email"
-                id="email"
+                type="name"
+                id="name"
                 className="shadow-sm bg-white/[3%] text-[16px] border-[1px] border-white/20 focus:border-white/80 outline-none block w-full p-4 placeholder:opacity-50 tracking-normal"
-                placeholder="name@flowbite.com"
+                placeholder="John Doe"
                 style={{ transition: ".3s all" }}
                 required
               />
             </div>
             <div>
-              <label htmlFor="subject" className="block mb-2 text-sm">
+              <label
+                htmlFor="subject"
+                className="block mb-2 text-sm tracking-normal"
+              >
                 Subject
               </label>
               <input
@@ -71,8 +73,11 @@ const Contact = () => {
                 required
               />
             </div>
-            <div className="">
-              <label htmlFor="message" className="block mb-2 text-sm">
+            <div className="mb-5">
+              <label
+                htmlFor="message"
+                className="block mb-2 text-sm tracking-normal"
+              >
                 Your message
               </label>
               <textarea
@@ -86,13 +91,14 @@ const Contact = () => {
                 placeholder="Leave a comment..."
               ></textarea>
             </div>
-            <button
-              style={{ transition: ".3s all" }}
-              className="p-3 px-7 flex text-[15px] border-[3px] cursor-pointer border-white tracking-wider text-bold hover:bg-[#ff9400] hover:border-[#ff9400] items-center hover:text-[#0f0f0f]"
-              type="submit"
+            <a
+              href={`mailto:hello@sparkoflagos.com?subject=${subject}&body=Hello, I am ${email}, ${comment}`}
+              className="button !h-[55px] w-fit text-[17px] border border-white flex items-center justify-center"
             >
-              SUBMIT
-            </button>
+              <span className="button-content tracking-wide font-semibold">
+                Submit
+              </span>
+            </a>
           </form>
         </div>
       </motion.section>

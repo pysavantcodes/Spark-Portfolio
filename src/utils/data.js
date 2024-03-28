@@ -90,7 +90,7 @@ export const data = [
   {
     title: "Music VFX",
     type: "music",
-    brief: "",
+    brief: "Music Video VFX",
     link: null,
     images: [
       "https://bafybeib44jsseg7rommkcg23rm6ofmrl4cj3uvga6czkbidumr4ydoweyi.ipfs.w3s.link/msedge_PGmoHWY7sJ.png",
@@ -117,7 +117,7 @@ export const data = [
   {
     title: "Car Renders",
     type: "3D & AI Image Generation",
-    brief: "",
+    brief: "3d close up Renders with Blender cycles",
     link: null,
     images: [
       "https://bafybeigwrgswgljs27qsyliyyniwgbksi5jijbcdlt3kbwhljguma4677i.ipfs.w3s.link/278202714_705695763915895_6342125497526322040_n.jpg",
@@ -128,5 +128,15 @@ export const data = [
       "https://bafybeieoptfxh5bvigeanhudyf6qcabdlyqsv2qf2faitperv5pq5knn4q.ipfs.w3s.link/271827764_1438774446557063_8434217163465090690_n (1).jpg",
     ],
     tag: "3d Renders",
+  },
+  {
+    title: "Stormzy VFX",
+    type: "music",
+    brief: "Music Video VFX",
+    link: "https://www.instagram.com/reel/CmgVdMlotGH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    images: [
+      "https://bafybeif2t5ndghpakezgya6eay7t6nockxjcvh6l75vps23hqhcte4jnam.ipfs.w3s.link/large@2x (1).jpeg",
+    ],
+    tag: "VFX",
   },
 ];
