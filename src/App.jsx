@@ -137,11 +137,10 @@ function App() {
         <div className="p-[100px]  max-2xl:px-[70px] py-[150px] flex justify-end max-md:justify-start max-md:px-10 max-md:py-[120px]">
           <h1
             id="text-anim"
-            className="font-semibold text-[80px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[30px] max-md:w-full leading-tight w-[70%] text-white/10 text-right"
+            className="font-semibold text-[80px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[30px] max-md:w-full leading-tight w-[70%] text-white/10 text-right [word-spacing:2px]"
           >
             Empowering brands to expand by crafting captivating, scroll-stopping
-            content, enhancing their visibility and engagement with expert post
-            production artistry.
+            content, enhancing their visibility and engagement with expert post-production artistry.
           </h1>
         </div>
         <div>
