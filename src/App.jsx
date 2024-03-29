@@ -5,11 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IoIosMail } from "react-icons/io";
 import { SiOpensea } from "react-icons/si";
 import { FiArrowUpRight, FiExternalLink } from "react-icons/fi";
-import {
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -18,7 +14,6 @@ import { companies, data } from "./utils/data";
 import Slider from "react-infinite-logo-slider";
 
 function App() {
-
   const links = [
     {
       link: "mailto:hello@sparkoflagos.com",
@@ -45,7 +40,6 @@ function App() {
       icons: <FaTwitter />,
     },
   ];
-
 
   useEffect(() => {
     gsap.config({ trialWarn: false });
@@ -82,11 +76,13 @@ function App() {
             <div>
               <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold pl-[48px] max-md:pl-[0px] text-left flex items-center gap-1.5 whitespace-nowrap">
                 <span>Spark Of Lagos</span> -{" "}
-                <span className="opacity-40 max-md:text-lg tracking-normal">Creative Agency</span>
+                <span className="opacity-40 max-md:text-lg tracking-normal">
+                  Creative Agency
+                </span>
               </h1>
               <div className="flex items-center gap-5 max-md:gap-4 mt-1.5">
                 <div className="w-[30px] h-[30px] max-md:w-[15px] max-md:h-[15px] bg-[#ff9400] rounded-full"></div>
-                <div className="text-[80px] max-md:text-[30px] font-bold  h-[100px] leading-[80px] max-md:leading-[40px] max-md:h-[40px] overflow-hidden text-left max-xl:text-[60px] max-lg:text-[40px] max-lg:h-[60px] max-lg:leading-[60px] text-[#ff9400]">
+                <div className="text-[80px] font-bold  h-[100px] leading-[80px] max-md:leading-[40px] max-md:h-[40px] overflow-hidden text-left max-xl:text-[60px] max-lg:text-[40px] max-lg:h-[60px] max-lg:leading-[60px] text-[#ff9400] max-md:text-[27px]">
                   <h1 className="v-slides">VFX/CGI</h1>
                   <h1 className="v-slides">AI</h1>
                   <h1 className="v-slides">Photo/Video Production</h1>
@@ -131,13 +127,6 @@ function App() {
             >
               <FiExternalLink className="mix-blend-difference max-md:text-[25px] text-[30px]" />
             </a>
-
-            {/* <iframe
-              src="https://player.vimeo.com/video/738460924?autoplay=1&loop=1&autopause=0"
-              width="100%"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-            ></iframe> */}
           </div>
         </header>
 
@@ -146,9 +135,8 @@ function App() {
             id="text-anim"
             className="font-semibold text-[80px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[30px] max-md:w-full leading-none w-[70%] text-white/10 text-right [word-spacing:2px]"
           >
-            Empowering brands to expand by crafting captivating, scroll-stopping
-            content, enhancing their visibility and engagement with expert
-            post-production artistry.
+            We help brands grow with compelling content and expert
+            post-production techniques to boost visibility and engagement.
           </h1>
         </div>
         <div className="pb-[5.3rem]">
@@ -164,7 +152,9 @@ function App() {
               return (
                 <Slider.Slide className="px-10 object-contain flex items-center">
                   <img
-                    className={`w-full object-contain ${index == 4 && "invert"}`}
+                    className={`w-full object-contain ${
+                      index == 4 && "invert"
+                    }`}
                     key={index}
                     src={data}
                   />
@@ -238,10 +228,17 @@ function App() {
           </div>
           <div className="text-center flex flex-col items-center p-10 py-14 mb-10">
             <h1 className="font-bold text-[80px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[50px] max-md:w-full leading-none [word-spacing:2px] tracking-tight text-center">
-              Like what <br className="md:hidden"/> you see?
+              Like what <br className="md:hidden" /> you see?
             </h1>
-            <h3 className="font-semibold text-[60px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[25px] max-md:w-full leading-none [word-spacing:2px] w-[50%] opacity-40 tracking-tight max-md:pt-2 text-center">contact us and <br className="" /> let's work together.</h3>
-            <a className="mt-10 border-b tracking-normal text-[24px] max-md:text-lg" href="mailto:hello@sparkoflagos.com">hello@sparkoflagos.com</a>
+            <h3 className="font-semibold text-[60px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[25px] max-md:w-full leading-none [word-spacing:2px] w-[50%] opacity-40 tracking-tight max-md:pt-2 text-center">
+              contact us and <br className="" /> let's work together.
+            </h3>
+            <a
+              className="mt-10 border-b tracking-normal text-[24px] max-md:text-lg"
+              href="mailto:hello@sparkoflagos.com"
+            >
+              hello@sparkoflagos.com
+            </a>
           </div>
         </div>
       </motion.section>
