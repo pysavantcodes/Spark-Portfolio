@@ -82,7 +82,7 @@ function App() {
             <div>
               <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold pl-[48px] max-md:pl-[0px] text-left flex items-center gap-1.5 whitespace-nowrap">
                 <span>Spark Of Lagos</span> -{" "}
-                <span className="opacity-40">Creative Agency</span>
+                <span className="opacity-40 max-md:text-lg tracking-normal">Creative Agency</span>
               </h1>
               <div className="flex items-center gap-5 max-md:gap-4 mt-1.5">
                 <div className="w-[30px] h-[30px] max-md:w-[15px] max-md:h-[15px] bg-[#ff9400] rounded-full"></div>
