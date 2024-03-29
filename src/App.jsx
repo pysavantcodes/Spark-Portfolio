@@ -136,14 +136,13 @@ function App() {
               src="https://github.com/pysavantcodes/google-sign-in-expo/raw/main/sparkvfx%20demo%20reel%201080p.mp4"
             />
 
-            <div className="absolute w-full top-0 left-0 h-full p-5 flex justify-end">
-              <a
-                href="https://vimeo.com/738460924"
-                target="_blank"
-              >
-                <FiExternalLink className="mix-blend-difference max-md:text-[25px] text-[30px]" />
-              </a>
-            </div>
+            <a
+              href="https://vimeo.com/738460924"
+              target="_blank"
+              className="absolute md:top-7 md:right-7 top-5 right-5 flex justify-end"
+            >
+              <FiExternalLink className="mix-blend-difference max-md:text-[25px] text-[30px]" />
+            </a>
 
             {/* <iframe
               src="https://player.vimeo.com/video/738460924?autoplay=1&loop=1&autopause=0"
