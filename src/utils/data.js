@@ -161,7 +161,7 @@ export const data = [
 export const companies = [
   "https://kuleanpay.com/img/newKuleanLogo.24359018.svg",
   "https://moniepoint.com/logo-mfb-white.svg",
-  "https://media.ethika.com/site-media/Web-Creatives/Ethika-Logo/ethika-logo.png?h=300",
+  "https://bafybeig52hpt2uwwqrlyvvkxn2cyhl2qxbkajoz2427dj6engo75iamkce.ipfs.w3s.link/Ethika_Icon_Logo-02-01.png",
   "https://www.arm.com.ng/wp-content/uploads/2021/07/arm-logo-resize.png",
   "https://bafybeig5mxag7ulqlwnwlqch5tlakdhpphjedj3pliee4wckjoyxi735wy.ipfs.w3s.link/mad.png",
   "https://workcity.io/wp-content/uploads/2022/06/cropped-cropped-cropped-workcityLogo23-1.png",
