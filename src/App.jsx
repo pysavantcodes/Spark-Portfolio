@@ -164,7 +164,7 @@ function App() {
               return (
                 <Slider.Slide className="px-10 object-contain flex items-center">
                   <img
-                    className="w-full object-contain"
+                    className={`w-full object-contain ${index == 4 && "invert"}`}
                     key={index}
                     src={data}
                   />
