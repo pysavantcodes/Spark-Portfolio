@@ -129,7 +129,6 @@ function App() {
             <video
               playsInline
               preload="auto"
-              crossOrigin="anonymous"
               autoPlay
               muted
               loop
