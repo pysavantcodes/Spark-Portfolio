@@ -1,16 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { motion, AnimatePresence, useCycle } from "framer-motion";
-import { IoIosMail, IoMdPlay } from "react-icons/io";
+import { motion, AnimatePresence } from "framer-motion";
+import { IoIosMail } from "react-icons/io";
 import { SiOpensea } from "react-icons/si";
 import { FiArrowUpRight, FiExternalLink } from "react-icons/fi";
 import {
   FaInstagram,
   FaLinkedinIn,
-  FaPlay,
   FaTwitter,
-  FaWhatsapp,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import gsap from "gsap";
@@ -20,21 +18,6 @@ import { companies, data } from "./utils/data";
 import Slider from "react-infinite-logo-slider";
 
 function App() {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  const navigate = useNavigate();
-  const images = [
-    "https://picsum.photos/900/500?image=900",
-    "https://picsum.photos/900/400?image=250",
-    "https://picsum.photos/1000/400?image=235",
-    "https://picsum.photos/1000/300?image=206",
-    "https://picsum.photos/1000/300?image=400",
-    "https://picsum.photos/1000/300?image=600",
-    "https://picsum.photos/600/300?image=300",
-    "https://picsum.photos/1000/300?image=700",
-    "https://picsum.photos/1000/300?image=200",
-    "https://picsum.photos/1000/300?image=230",
-    // "https://picsum.photos/1000/400?image=250",
-  ];
 
   const links = [
     {
@@ -63,26 +46,16 @@ function App() {
     },
   ];
 
-  var settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-  };
 
   useEffect(() => {
     gsap.config({ trialWarn: false });
     gsap.registerPlugin(ScrollTrigger);
 
-    const split = new SplitType("h1#text-anim", { type: "chars" }); // Use SplitType
+    const split = new SplitType("h1#text-anim", { type: "chars" });
 
     gsap.to(split.chars, {
       //   delay: 1,
-      color: "white", // Change color to white
+      color: "white",
       stagger: 1,
       ease: "power4",
       scrollTrigger: {
