@@ -128,6 +128,8 @@ function App() {
           <div className="embed-container mt-10 max-md:mt-4 bg-white/5">
             <video
               playsInline
+              preload="auto"
+              crossOrigin="anonymous"
               autoPlay
               muted
               loop
