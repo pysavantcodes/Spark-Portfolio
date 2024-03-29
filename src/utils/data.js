@@ -83,7 +83,6 @@ export const data = [
       "https://bafybeihw5an4qpq4el7evschpmmicttjfamvytdvbzk3sszn7ybk5fesvm.ipfs.w3s.link/vlcsnap-2024-02-01-19h33m26s775.png",
       "https://bafybeifxalzuakxlj2x6vknagj32bue3erw5vipnqg4uu2dzzuaauwvww4.ipfs.w3s.link/vlcsnap-2024-02-01-19h35m30s996.png",
       "https://bafybeie36waiaokv4h6ywz7migijon52emzkw5c4m5yoxfw5j66x45dhaq.ipfs.w3s.link/vlcsnap-2024-02-01-19h32m41s158.png",
-      "https://bafybeib6uijchiibpa7pajoras52amnr6lio5vy4qmylbnjxsygh2rjq6q.ipfs.w3s.link/vlcsnap-2024-02-01-19h33m11s770.png",
     ],
     tag: "VFX",
   },
