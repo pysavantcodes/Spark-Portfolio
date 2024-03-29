@@ -4,9 +4,9 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import MenuToggle from "./MenuToggle";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import logo from "../assets/portrait.jpg"
 import ScrollToTop from "./ScrollToTop";
 import Footer from "./Footer";
+import logo from "../assets/logo.svg"
 
 const Root = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -122,7 +122,7 @@ const Root = () => {
           <Link to={"/"}><img
             src={logo}
             alt=""
-            className="w-[70px] h-[70px] max-md:w-[50px] max-md:h-[50px] object-cover rounded-full pointer-events-none select-none"
+            className="h-[60px] max-md:h-[40px] object-cover  pointer-events-none select-none"
           /></Link>
           <MenuToggle
             isOpen={isOpen}

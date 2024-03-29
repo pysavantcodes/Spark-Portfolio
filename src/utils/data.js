@@ -153,8 +153,18 @@ export const data = [
       "https://bafybeid7ey2c5lblh3isrqewzt3loj7uy35bjdncrjasicovhqbg24xumy.ipfs.w3s.link/IMG_1228.JPEG.jpg",
       "https://bafybeiczecba66rvnbymgtbzoiemndqtslhqqa4xap2uewlgmdkhsnexma.ipfs.w3s.link/IMG_0447.JPEG.jpg",
       "https://bafybeihiwx2tuyq3pzzksb4u3tivok2pcvaqe4ttgakxmkcb2llkz4ddgq.ipfs.w3s.link/IMG_1230.JPEG.jpg",
-      "https://bafybeidhdukmnrg4ovte7svk52iwit2r63uveeck726vurirkayqlq4ppy.ipfs.w3s.link/IMG_1156.JPEG.jpg"
+      "https://bafybeidhdukmnrg4ovte7svk52iwit2r63uveeck726vurirkayqlq4ppy.ipfs.w3s.link/IMG_1156.JPEG.jpg",
     ],
     tag: "AI",
   },
+];
+
+export const companies = [
+  "https://kuleanpay.com/img/newKuleanLogo.24359018.svg",
+  "https://moniepoint.com/logo-mfb-white.svg",
+  "https://media.ethika.com/site-media/Web-Creatives/Ethika-Logo/ethika-logo.png?h=300",
+  "https://www.arm.com.ng/wp-content/uploads/2021/07/arm-logo-resize.png",
+  "https://bafybeig5mxag7ulqlwnwlqch5tlakdhpphjedj3pliee4wckjoyxi735wy.ipfs.w3s.link/mad.png",
+  "https://workcity.io/wp-content/uploads/2022/06/cropped-cropped-cropped-workcityLogo23-1.png",
+  "https://cms.zebet.ng/assets/3e3aaa3b-a960-4d57-b0d2-c4b9f38812f0",
 ];

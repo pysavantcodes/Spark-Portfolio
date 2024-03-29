@@ -89,6 +89,13 @@ const CaseStudies = () => {
             </div>
           );
         })}
+        <div className="text-center flex flex-col items-center p-10 py-14 mt-10 mb-10">
+            <h1 className="font-bold text-[80px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[50px] max-md:w-full leading-none [word-spacing:2px] tracking-tight text-center">
+              Like what <br className="md:hidden"/> you see?
+            </h1>
+            <h3 className="font-semibold text-[60px] max-2xl:text-[45px] max-lg:text-[30px] max-md:text-[25px] max-md:w-full leading-none [word-spacing:2px] w-[50%] opacity-40 tracking-tight max-md:pt-2 text-center">contact us and <br className="" /> let's work together.</h3>
+            <a className="mt-10 border-b tracking-normal text-[24px] max-md:text-lg" href="mailto:hello@sparkoflagos.com">hello@sparkoflagos.com</a>
+          </div>
       </motion.section>
     </AnimatePresence>
   );
