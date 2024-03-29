@@ -82,7 +82,7 @@ function App() {
               </h1>
               <div className="flex items-center gap-5 max-md:gap-4 mt-1.5">
                 <div className="w-[30px] h-[30px] max-md:w-[15px] max-md:h-[15px] bg-[#ff9400] rounded-full"></div>
-                <div className="text-[80px] font-bold  h-[100px] leading-[80px] max-md:leading-[40px] max-md:h-[40px] overflow-hidden text-left max-xl:text-[60px] max-lg:text-[40px] max-lg:h-[60px] max-lg:leading-[60px] text-[#ff9400] max-md:text-[27px]">
+                <div className="text-[80px] font-bold  h-[100px] leading-[80px] max-md:leading-[40px] max-md:h-[40px] overflow-hidden text-left max-xl:text-[60px] max-lg:text-[40px] max-lg:h-[60px] max-lg:leading-[60px] text-[#ff9400] max-md:text-[25px]">
                   <h1 className="v-slides">VFX/CGI</h1>
                   <h1 className="v-slides">AI</h1>
                   <h1 className="v-slides">Photo/Video Production</h1>
