@@ -95,7 +95,7 @@ function App() {
         <header className="gap-x-28 items-center max-md:flex-col max-md:text-center gap-y-5 relative ">
           <div className="flex justify-between p-10 items-end z-[20] max-md:px-5 mix-blend-difference w-full max-[1179px]:flex-col max-[1179px]:items-start max-[1179px]:gap-5">
             <div>
-              <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold pl-[48px] max-md:pl-[30px] text-left flex items-center gap-1.5 whitespace-nowrap">
+              <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold max-md:pl-[30px] text-left flex items-center gap-1.5 whitespace-nowrap">
                 <span>Spark Of Lagos</span> - <span className="opacity-40">Creative Director</span>
               </h1>
               <div className="flex items-center gap-5 max-md:gap-4 mt-1.5">
