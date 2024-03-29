@@ -95,13 +95,13 @@ function App() {
         <header className="gap-x-28 items-center max-md:flex-col max-md:text-center gap-y-5 relative ">
           <div className="flex justify-between p-10 items-end z-[20] max-md:px-5 mix-blend-difference w-full max-[1179px]:flex-col max-[1179px]:items-start max-[1179px]:gap-5">
             <div>
-              <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold pl-[48px] max-md:pl-[30px] text-left flex items-center gap-1.5">
-                <span>Spark Of Lagos</span> - <span className="opacity-40">Creative Director</span>
+              <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold pl-[48px] max-md:pl-[0px] text-left flex items-center gap-1.5">
+                <span>Spark Of Lagos</span> -{" "}
+                <span className="opacity-40">Creative Director</span>
               </h1>
               <div className="flex items-center gap-5 max-md:gap-4 mt-1.5">
                 <div className="w-[30px] h-[30px] max-md:w-[15px] max-md:h-[15px] bg-[#ff9400] rounded-full"></div>
                 <div className="text-[100px] max-md:text-[40px] font-bold  h-[100px] leading-[80px] max-md:leading-[40px] max-md:h-[40px] overflow-hidden text-left max-xl:text-[80px] max-lg:text-[60px] max-lg:h-[60px] max-lg:leading-[60px] text-[#ff9400]">
-             
                   <h1 className="v-slides">Post Production</h1>
                   <h1 className="v-slides">CGI</h1>
                   <h1 className="v-slides ">AI</h1>
@@ -125,13 +125,23 @@ function App() {
             </div>
           </div>
           {/* ?autoplay=1&loop=1&autopause=0 */}
-          <div className="embed-container mt-10 max-md:mt-4">
-            <iframe
+          <div className="embed-container mt-10 max-md:mt-4 bg-white/5">
+            <a href="https://vimeo.com/738460924" target="_blank" className="w-full h-full">
+            <video
+              playsInline
+              autoPlay
+              muted
+              className="w-full"
+              controls={false}
+              src="https://github.com/pysavantcodes/google-sign-in-expo/raw/main/sparkvfx%20demo%20reel%201080p.mp4"
+            />
+            </a>
+            {/* <iframe
               src="https://player.vimeo.com/video/738460924?autoplay=1&loop=1&autopause=0"
               width="100%"
               allow="autoplay; fullscreen"
               allowFullScreen
-            ></iframe>
+            ></iframe> */}
           </div>
         </header>
         <div className="p-[100px]  max-2xl:px-[70px] py-[150px] flex justify-end max-md:justify-start max-md:px-10 max-md:py-[120px]">
@@ -140,7 +150,8 @@ function App() {
             className="font-semibold text-[80px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[30px] max-md:w-full leading-tight w-[70%] text-white/10 text-right [word-spacing:2px]"
           >
             Empowering brands to expand by crafting captivating, scroll-stopping
-            content, enhancing their visibility and engagement with expert post-production artistry.
+            content, enhancing their visibility and engagement with expert
+            post-production artistry.
           </h1>
         </div>
         <div>
