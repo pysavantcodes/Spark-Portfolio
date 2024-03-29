@@ -139,4 +139,22 @@ export const data = [
     ],
     tag: "VFX",
   },
+  {
+    title: "AI Image Generations",
+    type: "3D & AI Image Generation",
+    brief: "Midjourney generated AI images",
+    link: null,
+    images: [
+      "https://bafybeias2ekqlne3qytovvxudxtv2mons4onoqusgscmqgnklj4i6u3rbq.ipfs.w3s.link/IMG_0092.JPEG.jpg",
+      "https://bafybeifsijps6gtlox5ch35gurqdi6qmhqcxflvvuk2u56rlj22dch2kdu.ipfs.w3s.link/IMG_0038.JPEG.jpg",
+      "https://bafybeigmnrncvylqsst3i6kfgbgxnqy2sxmthtnunpfxcjdlo5j4wdsezu.ipfs.w3s.link/IMG_1192.JPG",
+      "https://bafybeigsyadxwueey76f2fcxdc4xx2a42nfjbabxaxlltvf64hoyg3nab4.ipfs.w3s.link/IMG_0505.JPEG.jpg",
+      "https://bafybeiesb5vslepzgwazoo54rvmfreggrqyt7gvfylv4y5sy7egbmll3gi.ipfs.w3s.link/IMG_1407.JPEG.jpg",
+      "https://bafybeid7ey2c5lblh3isrqewzt3loj7uy35bjdncrjasicovhqbg24xumy.ipfs.w3s.link/IMG_1228.JPEG.jpg",
+      "https://bafybeiczecba66rvnbymgtbzoiemndqtslhqqa4xap2uewlgmdkhsnexma.ipfs.w3s.link/IMG_0447.JPEG.jpg",
+      "https://bafybeihiwx2tuyq3pzzksb4u3tivok2pcvaqe4ttgakxmkcb2llkz4ddgq.ipfs.w3s.link/IMG_1230.JPEG.jpg",
+      "https://bafybeidhdukmnrg4ovte7svk52iwit2r63uveeck726vurirkayqlq4ppy.ipfs.w3s.link/IMG_1156.JPEG.jpg"
+    ],
+    tag: "AI",
+  },
 ];
