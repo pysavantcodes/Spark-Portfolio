@@ -4,7 +4,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import { IoIosMail, IoMdPlay } from "react-icons/io";
 import { SiOpensea } from "react-icons/si";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiExternalLink } from "react-icons/fi";
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -96,7 +96,8 @@ function App() {
           <div className="flex justify-between p-10 items-end z-[20] max-md:px-5 mix-blend-difference w-full max-[1179px]:flex-col max-[1179px]:items-start max-[1179px]:gap-5">
             <div>
               <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold pl-[48px] max-md:pl-[0px] text-left flex items-center gap-1.5">
-                <span>Spark Of Lagos</span> - <span className="opacity-40">Creative Director</span>
+                <span>Spark Of Lagos</span> -{" "}
+                <span className="opacity-40">Creative Director</span>
               </h1>
               <div className="flex items-center gap-5 max-md:gap-4 mt-1.5">
                 <div className="w-[30px] h-[30px] max-md:w-[15px] max-md:h-[15px] bg-[#ff9400] rounded-full"></div>
@@ -125,16 +126,25 @@ function App() {
           </div>
           {/* ?autoplay=1&loop=1&autopause=0 */}
           <div className="embed-container mt-10 max-md:mt-4 bg-white/5">
-            <a href="https://vimeo.com/738460924" target="_blank" className="w-full h-full">
             <video
               playsInline
               autoPlay
               muted
+              loop
               className="w-full"
               controls={false}
               src="https://github.com/pysavantcodes/google-sign-in-expo/raw/main/sparkvfx%20demo%20reel%201080p.mp4"
             />
-            </a>
+
+            <div className="absolute w-full top-0 left-0 h-full p-5 flex justify-end">
+              <a
+                href="https://vimeo.com/738460924"
+                target="_blank"
+              >
+                <FiExternalLink className="mix-blend-difference max-md:text-[25px] text-[30px]" />
+              </a>
+            </div>
+
             {/* <iframe
               src="https://player.vimeo.com/video/738460924?autoplay=1&loop=1&autopause=0"
               width="100%"
