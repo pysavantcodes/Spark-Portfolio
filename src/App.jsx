@@ -74,8 +74,8 @@ function App() {
         <header className="gap-x-28 items-center max-md:flex-col max-md:text-center gap-y-5 relative ">
           <div className="flex justify-between p-10 items-end z-[20] max-md:px-5 mix-blend-difference w-full max-[1179px]:flex-col max-[1179px]:items-start max-[1179px]:gap-5">
             <div>
-              <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold pl-[48px] max-md:pl-[0px] text-left flex items-center gap-1.5 whitespace-nowrap">
-                <span>Spark Of Lagos</span> -{" "}
+              <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold pl-[48px] max-md:pl-[0px] text-left max-md:block flex items-center gap-1.5 whitespace-nowrap max-md:leading-none">
+                <span>Spark Of Lagos</span> <span className="max-md:hidden">-</span>{" "} <br className="md:hidden"/>
                 <span className="opacity-40 max-md:text-lg tracking-normal">
                   Creative Agency
                 </span>
@@ -233,12 +233,14 @@ function App() {
             <h3 className="font-semibold text-[60px] max-2xl:text-[60px] max-lg:text-[40px] max-md:text-[25px] max-md:w-full leading-none [word-spacing:2px] w-[50%] opacity-40 tracking-tight max-md:pt-2 text-center">
               contact us and <br className="" /> let's work together.
             </h3>
-            <a
-              className="mt-10 border-b tracking-normal text-[24px] max-md:text-lg"
-              href="mailto:hello@sparkoflagos.com"
+            <Link
+              to="/contact"
+              className="button text-[17px] border border-white flex items-center justify-center mt-10"
             >
-              hello@sparkoflagos.com
-            </a>
+              <span className="button-content tracking-wide font-semibold">
+                Let's Talk
+              </span>
+            </Link>
           </div>
         </div>
       </motion.section>
