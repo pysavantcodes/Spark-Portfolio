@@ -29,7 +29,7 @@ const Contact = () => {
               Let's Talk
             </h1>
             <p className="text-[22px] leading-[25px] opacity-70 max-md:pt-1 max-md:text-[17px] tracking-normal max-md:w-[90%]">
-              contact me and let's work together
+              contact us and let's work together
             </p>
           </div>
           <form
