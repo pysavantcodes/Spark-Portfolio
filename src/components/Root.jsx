@@ -6,7 +6,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import ScrollToTop from "./ScrollToTop";
 import Footer from "./Footer";
-import logo from "../assets/logo.svg"
+import logo from "../assets/logo.svg";
+import { Toaster } from "react-hot-toast";
 
 const Root = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -43,6 +44,7 @@ const Root = () => {
   }, []);
   return (
     <div>
+      <Toaster />
       <motion.section
         id="body"
         initial={{ opacity: 0 }}
@@ -119,11 +121,13 @@ const Root = () => {
           ref={navbarRef}
           className="flex-row flex w-full p-10 max-md:p-7 justify-between items-center sticky top-0 z-[9999999]"
         >
-          <Link to={"/"}><img
-            src={logo}
-            alt=""
-            className="h-[60px] max-md:h-[40px] object-cover  pointer-events-none select-none"
-          /></Link>
+          <Link to={"/"}>
+            <img
+              src={logo}
+              alt=""
+              className="h-[60px] max-md:h-[40px] object-cover  pointer-events-none select-none"
+            />
+          </Link>
           <MenuToggle
             isOpen={isOpen}
             onClick={() => toggleOpen()}
@@ -135,9 +139,9 @@ const Root = () => {
           />
         </div>
       </motion.section>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Outlet />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
