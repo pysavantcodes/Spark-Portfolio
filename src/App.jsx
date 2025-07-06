@@ -75,7 +75,9 @@ function App() {
           <div className="flex justify-between p-10 items-end z-[20] max-md:px-5 mix-blend-difference w-full max-[1179px]:flex-col max-[1179px]:items-start max-[1179px]:gap-5">
             <div>
               <h1 className="text-[50px] leading-[1.15] max-md:text-[24px] font-bold pl-[48px] max-md:pl-[0px] text-left max-md:block flex items-center gap-1.5 whitespace-nowrap max-md:leading-none">
-                <span>Spark Of Lagos</span> <span className="max-md:hidden">-</span>{" "} <br className="md:hidden"/>
+                <span>Spark Of Lagos</span>{" "}
+                <span className="max-md:hidden">-</span>{" "}
+                <br className="md:hidden" />
                 <span className="opacity-40 max-md:text-lg tracking-normal">
                   Creative Agency
                 </span>
@@ -143,7 +145,7 @@ function App() {
           <Slider
             className="w-full"
             width="250px"
-            duration={10}
+            duration={20}
             pauseOnHover={true}
             blurBorders={true}
             blurBoderColor={"#0f0f0f"}
@@ -153,7 +155,7 @@ function App() {
                 <Slider.Slide className="px-10 object-contain flex items-center">
                   <img
                     className={`w-full object-contain ${
-                      index == 4 && "invert"
+                      (index == 4 || index == 8) && "invert"
                     }`}
                     key={index}
                     src={data}

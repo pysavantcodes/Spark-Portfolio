@@ -7,30 +7,40 @@ import Contact from "./pages/Contact.jsx";
 import Root from "./components/Root.jsx";
 import CaseStudies from "./pages/CaseStudies.jsx";
 import CaseStudy from "./pages/CaseStudy.jsx";
+import Index from "./pages/MixedReality.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     children: [
       {
-        index: true,
-        path: "",
-        element: <App />,
+        path: "/",
+        children: [
+          {
+            index: true,
+            path: "",
+            element: <App />,
+          },
+          {
+            path: "/casestudies",
+            element: <CaseStudies />,
+          },
+          {
+            path: "/casestudies/:id",
+            element: <CaseStudy />,
+          },
+          {
+            path: "/contact",
+            element: <Contact />,
+          },
+        ],
+        element: <Root />,
       },
       {
-        path: "/casestudies",
-        element: <CaseStudies />,
-      },
-      {
-        path: "/casestudies/:id",
-        element: <CaseStudy />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
+        path: "/mixedreality",
+        element: <Index />,
       },
     ],
-    element: <Root />,
   },
 ]);
 

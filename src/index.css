@@ -23,7 +23,7 @@
   box-sizing: border-box;
   font-family: "Plus Jakarta Sans", sans-serif;
 
-  letter-spacing: -1.5px;
+  /* letter-spacing: -1.5px; */
   vertical-align: middle !important;
   user-select: none;
   /* transition: .5s all; */
@@ -44,6 +44,11 @@ body {
 h1 {
   letter-spacing: -1.5px;
   vertical-align: middle;
+}
+
+input,
+textarea {
+  font-size: 16px !important;
 }
 
 .v-slide {

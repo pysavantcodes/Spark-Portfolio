@@ -96,6 +96,23 @@ const Root = () => {
                   Case Studies
                 </h3>
               </motion.span>
+              <motion.span
+                onClick={() => {
+                  toggleOpen();
+                  navigate("/mixedreality");
+                }}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.1, ease: "linear" }}
+                className="hover:text-[#ff9400] cursor-pointer"
+              >
+                <h3
+                  style={{ transition: ".5s all" }}
+                  className="text-[55px] hover:text-[#ff9400] max-md:text-[35px] font-semibold "
+                >
+                  Mixed Reality
+                </h3>
+              </motion.span>
               <motion.a
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}

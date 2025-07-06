@@ -166,4 +166,13 @@ export const companies = [
   "https://bafybeig5mxag7ulqlwnwlqch5tlakdhpphjedj3pliee4wckjoyxi735wy.ipfs.w3s.link/mad.png",
   "https://i.postimg.cc/3wXnhFX3/cropped-cropped-cropped-workcity-Logo23-1.png",
   "https://i.postimg.cc/RZVtsrd1/zebet-logo.webp",
+  "https://wp.logos-download.com/wp-content/uploads/2023/02/Bet9ja_Logo-3000x1124.png",
+  "https://wp.logos-download.com/wp-content/uploads/2016/02/Reebok_Logo_2019-700x350.png",
+  "https://omaricode.com/cdn/shop/files/omaricode_logo_ac00c526-97bb-42d8-85e4-c368fc1a700b.png?v=1674300736&width=300",
+  "https://airvend.ng/static/media/airvendlogo.77e4438a.svg",
+  "https://www.optimumnutrition.com/_ui/v03a8c1b66c/responsive/common/images/on-logo-white.svg",
+  "https://mecure.com.ng/images/brand-logo.svg",
+  "https://mrchef.com/wp-content/uploads/2020/06/mr-chef-logo.png",
+  "https://cdn.prod.website-files.com/60a530a795c0ca8a81c5868a/656f298c6624a3a3b8e52205_skool-logo-9DCF3E49B3-seeklogo.com.png",
+  "https://manuals.plus/wp-content/uploads/2023/02/oraimo-logo.png",
 ];
