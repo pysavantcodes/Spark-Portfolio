@@ -32,6 +32,7 @@ const Index = () => {
       position: "Co-founder IYA",
       text: "Working with Spark has been an exceptional experience! My business partner and I designed our own product, and we needed detailed 3D renders to give our manufacturer a clear and precise vision. Lanre delivered beyond our expectations with incredibly detailed and accurate 3D renderings, showcasing his extraordinary precision and creativity. What truly sets him apart is his excellent communication— he's attentive, asks the right questions, and ensures that every detail is understood perfectly. His professionalism and dedication to quality make him a standout collaborator. I highly recommend Lanre to anyone looking for top-tier 3D rendering and design services!",
       avatar: "TS",
+      image: "https://i.postimg.cc/W4sCS5nJ/PHOTO-2025-07-07-18-31-07.jpg",
     },
     {
       name: "Cathy-Mae SitaRam",
@@ -46,6 +47,7 @@ const Index = () => {
       rating: 5,
       text: "Absolutely! Working with you has been an incredible experience. Your creativity, professionalism, and attention to detail are unmatched. The CGI video you created exceeded my expectations and perfectly captured my vision.",
       avatar: "MC",
+      image: "https://i.postimg.cc/pTT7My3W/PHOTO-2025-07-07-18-31-07-3.jpg",
     },
     {
       name: "Sam Ojie",
@@ -53,6 +55,7 @@ const Index = () => {
       rating: 5,
       text: "Olanrewaju is fantastic and a member of our team. We love working with him.",
       avatar: "MC",
+      image: "https://i.ibb.co/bM6sq8tW/PHOTO-2025-07-07-18-31-07-2.jpg",
     },
   ];
 
@@ -230,6 +233,23 @@ const Index = () => {
         <Toaster />
         {/* Hero Section with Video Background */}
         <section className="relative min-h-[110vh] py-20 flex overflow-hidden">
+          <button
+            onClick={() => {
+              const pdfUrl =
+                "https://drive.google.com/uc?export=download&id=1DF9qdiWX-F_Dj23BR4UE6N30ErlhxG7b";
+              const link = document.createElement("a");
+              link.href = pdfUrl;
+              link.download = "Mixed_Reality_Presentation.pdf";
+              link.target = "_blank";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+            className="bg-[#ff9400] hover:bg-[#ff9400] text-black rounded-full font-semibold px-7 py-3.5 text-sm max-md:px-6 max-md:py-3 transition-colors flex items-center gap-3 max-md:text-xs fixed left-8 top-8 z-[9999] max-md:left-4 max-md:top-4 shadow-lg"
+          >
+            <FaFilePdf className="text-2xl max-md:text-xs" />
+            Download Presentation
+          </button>
           <video
             ref={videoRef}
             autoPlay
@@ -496,9 +516,17 @@ const Index = () => {
                   >
                     <div className="bg-white h-full dark:bg-zinc-900 p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-200 dark:border-zinc-700 max-w-3xl mx-auto">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-12 max-md:w-10 max-md:h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-xl max-md:text-lg">
-                          {t.avatar}
-                        </div>
+                        {t.image ? (
+                          <img
+                            src={t.image}
+                            alt={t.name}
+                            className="w-12 h-12 max-md:w-10 max-md:h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-xl max-md:text-lg object-cover"
+                          />
+                        ) : (
+                          <div className="w-12 h-12 max-md:w-10 max-md:h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-xl max-md:text-lg">
+                            {t.avatar}
+                          </div>
+                        )}
                         <div>
                           <p className="font-semibold text-lg max-md:text-base">
                             {t.name}
@@ -670,25 +698,7 @@ const Index = () => {
           </div>
         </section>
 
-        <div className="flex items-center justify-center pb-8">
-          <button
-            onClick={() => {
-              const pdfUrl =
-                "https://drive.google.com/uc?export=download&id=1DF9qdiWX-F_Dj23BR4UE6N30ErlhxG7b";
-              const link = document.createElement("a");
-              link.href = pdfUrl;
-              link.download = "Mixed_Reality_Presentation.pdf";
-              link.target = "_blank";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
-            className="bg-[#ff9400] hover:bg-[#ff9400] text-black rounded-full font-semibold px-8 py-4 text-base mt-8 transition-colors flex items-center gap-3 max-md:text-sm"
-          >
-            <FaFilePdf className="text-2xl max-md:text-xl" />
-            Download Presentation
-          </button>
-        </div>
+        {/* <div className="flex items-center justify-start pb-8 px-8"></div> */}
 
         {/* Footer */}
         <Footer />
