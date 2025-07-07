@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { FaChevronLeft, FaWhatsapp } from "react-icons/fa";
+import { FaChevronLeft, FaFilePdf, FaWhatsapp } from "react-icons/fa";
 import { companies } from "../utils/data";
 import Slider from "react-infinite-logo-slider";
 import Footer from "../components/Footer";
@@ -24,16 +24,6 @@ const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
   const videoRef = useRef(null);
-
-  useEffect(() => {
-    document.body.style.position = "relative";
-  }, []);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(console.error);
-    }
-  }, []);
 
   const testimonials = [
     {
@@ -65,6 +55,25 @@ const Index = () => {
       avatar: "MC",
     },
   ];
+
+  useEffect(() => {
+    document.body.style.position = "relative";
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(console.error);
+    }
+  }, []);
+
+  // Auto-advance testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000); // Change testimonial every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -193,6 +202,16 @@ const Index = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   const toggleFaq = (value) => {
@@ -462,31 +481,95 @@ const Index = () => {
           <h2 className="text-3xl font-bold max-md:text-2xl mb-12 px-10 text-center">
             What Our Clients Say
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 p-4 ">
-            {testimonials.map((t, i) => (
+          <div className="relative px-10 max-md:px-0">
+            <div className="relative overflow-hidden">
               <div
-                key={i}
-                className={`bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-200 dark:border-zinc-700 ${
-                  i === 0
-                    ? "col-span-1 sm:col-span-2 lg:col-span-3 row-span-2"
-                    : "col-span-1 sm:col-span-1 lg:col-span-3"
-                }`}
+                className="flex transition-transform !items-stretch h-full duration-500 ease-in-out"
+                style={{
+                  transform: `translateX(-${currentTestimonial * 100}%)`,
+                }}
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold">
-                    {t.avatar}
+                {testimonials.map((t, i) => (
+                  <div
+                    key={i}
+                    className="w-full flex-shrink-0 px-6 flex items-stretch"
+                  >
+                    <div className="bg-white h-full dark:bg-zinc-900 p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-200 dark:border-zinc-700 max-w-3xl mx-auto">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 max-md:w-10 max-md:h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-xl max-md:text-lg">
+                          {t.avatar}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-lg max-md:text-base">
+                            {t.name}
+                          </p>
+                          <p className="text-sm text-zinc-500">{t.position}</p>
+                        </div>
+                      </div>
+                      <p className="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-md:text-sm">
+                        {t.text}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold">{t.name}</p>
-                    <p className="text-sm text-zinc-500">{t.position}</p>
-                    {/* <StarRating rating={t.rating} /> */}
-                  </div>
-                </div>
-                <p className="text-sm text-zinc-600 dark:text-zinc-300">
-                  {t.text}
-                </p>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <button
+              onClick={prevTestimonial}
+              className="absolute left-5 max-md:left-3 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 max-md:p-2 transition-all duration-300 border border-white/20"
+              aria-label="Previous testimonial"
+            >
+              <svg
+                className="h-6 w-6 text-white max-md:h-4 max-md:w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-5 max-md:right-3 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 max-md:p-2 transition-all duration-300 border border-white/20"
+              aria-label="Next testimonial"
+            >
+              <svg
+                className="h-6 w-6 text-white max-md:h-4 max-md:w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center space-x-2 mt-8 items-center">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={` rounded-full transition-all ${
+                    index === currentTestimonial
+                      ? "bg-[#ff9400] w-3 h-3"
+                      : "bg-white/30 hover:bg-white/50 w-2 h-2"
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
@@ -586,6 +669,26 @@ const Index = () => {
             </button>
           </div>
         </section>
+
+        <div className="flex items-center justify-center pb-8">
+          <button
+            onClick={() => {
+              const pdfUrl =
+                "https://drive.google.com/uc?export=download&id=1DF9qdiWX-F_Dj23BR4UE6N30ErlhxG7b";
+              const link = document.createElement("a");
+              link.href = pdfUrl;
+              link.download = "Mixed_Reality_Presentation.pdf";
+              link.target = "_blank";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+            className="bg-[#ff9400] hover:bg-[#ff9400] text-black rounded-full font-semibold px-8 py-4 text-base mt-8 transition-colors flex items-center gap-3 max-md:text-sm"
+          >
+            <FaFilePdf className="text-2xl max-md:text-xl" />
+            Download Presentation
+          </button>
+        </div>
 
         {/* Footer */}
         <Footer />
