@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Downloaded images (from scripts/download-images.js)
+downloaded-images
