@@ -2,7 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { FaChevronLeft, FaFilePdf, FaWhatsapp } from "react-icons/fa";
+import {
+  FaChevronDown,
+  FaChevronLeft,
+  FaFilePdf,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { companies } from "../utils/data";
 import Slider from "react-infinite-logo-slider";
 import Footer from "../components/Footer";
@@ -23,7 +28,9 @@ const Index = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
+  const [isBudgetOpen, setIsBudgetOpen] = useState(false);
   const videoRef = useRef(null);
+  const budgetSelectRef = useRef(null);
 
   const testimonials = [
     {
@@ -58,6 +65,15 @@ const Index = () => {
       image: "https://i.ibb.co/bM6sq8tW/PHOTO-2025-07-07-18-31-07-2.jpg",
     },
   ];
+  const budgetOptions = [
+    { value: "$500-$1500", label: "$500 - $1,500" },
+    { value: "$1500-$5000", label: "$1,500 - $5,000" },
+    { value: "$5000-$10000", label: "$5,000 - $10,000" },
+    { value: "$10000+", label: "$10,000+" },
+  ];
+  const selectedBudgetLabel =
+    budgetOptions.find((option) => option.value === formData.budget)?.label ||
+    "Select your budget range";
 
   useEffect(() => {
     document.body.style.position = "relative";
@@ -77,6 +93,36 @@ const Index = () => {
 
     return () => clearInterval(interval);
   }, [testimonials.length]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        budgetSelectRef.current &&
+        !budgetSelectRef.current.contains(event.target)
+      ) {
+        setIsBudgetOpen(false);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsBudgetOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (currentStep !== 1) {
+      setIsBudgetOpen(false);
+    }
+  }, [currentStep]);
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -99,7 +145,7 @@ const Index = () => {
         !formData.budget
       ) {
         toast.error(
-          "Please fill in all required fields: Project description, interests, and budget are required."
+          "Please fill in all required fields: Project description, interests, and budget are required.",
         );
         return;
       }
@@ -133,7 +179,7 @@ const Index = () => {
 
     if (missingFields.length > 0) {
       toast.error(
-        `Please fill in all required fields: ${missingFields.join(", ")}`
+        `Please fill in all required fields: ${missingFields.join(", ")}`,
       );
       return;
     }
@@ -171,7 +217,7 @@ const Index = () => {
         "service_tzr447l",
         "template_lkiwxu8",
         form,
-        "ff5Jq8dUitjbknJdb"
+        "ff5Jq8dUitjbknJdb",
       );
 
       document.body.removeChild(form);
@@ -180,7 +226,7 @@ const Index = () => {
         "Form submitted successfully! We'll get back to you within 24 hours.",
         {
           id: toastId,
-        }
+        },
       );
 
       setFormData({
@@ -200,7 +246,7 @@ const Index = () => {
         "Submission failed. Please try again or contact us directly.",
         {
           id: toastId,
-        }
+        },
       );
     } finally {
       setIsSubmitting(false);
@@ -213,7 +259,7 @@ const Index = () => {
 
   const prevTestimonial = () => {
     setCurrentTestimonial(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
   };
 
@@ -342,19 +388,72 @@ const Index = () => {
                       <label className="block text-white font-medium mb-2">
                         What is your budget? *
                       </label>
-                      <select
-                        value={formData.budget}
-                        onChange={(e) =>
-                          handleInputChange("budget", e.target.value)
-                        }
-                        className="w-full bg-white/10 border border-white/20 text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#ff9400]"
-                      >
-                        <option value="">Choose</option>
-                        <option value="$300-$500">$300 - $500</option>
-                        <option value="$500-$1500">$500 - $1,500</option>
-                        <option value="$1500-$7500">$1,500 - $7,500</option>
-                        <option value="$7500+">$7,500+</option>
-                      </select>
+                      <div className="relative" ref={budgetSelectRef}>
+                        <button
+                          type="button"
+                          onClick={() => setIsBudgetOpen((prev) => !prev)}
+                          aria-haspopup="listbox"
+                          aria-expanded={isBudgetOpen}
+                          className="w-full flex items-center justify-between h-11 rounded-md border border-white/20 !bg-white/[0.05] text-sm text-left text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_8px_24px_rgba(0,0,0,0.16)] px-4 transition-all focus:outline-none focus:ring-2 focus:ring-[#ff9400]/80 focus:border-[#ff9400]/70 hover:bg-white/[0.08]"
+                        >
+                          <span
+                            className={
+                              formData.budget ? "text-white" : "text-white/70"
+                            }
+                          >
+                            {selectedBudgetLabel}
+                          </span>
+                          <span className="pointer-events-none  text-white/80">
+                            <FaChevronDown
+                              className={`text-xs transition-transform ${
+                                isBudgetOpen ? "rotate-180" : ""
+                              }`}
+                            />
+                          </span>
+                        </button>
+
+                        <AnimatePresence>
+                          {isBudgetOpen ? (
+                            <motion.div
+                              initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                              transition={{ duration: 0.16, ease: "easeOut" }}
+                              className="absolute z-30 mt-2 w-full rounded-md border border-white/20 !bg-white backdrop shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_14px_36px_rgba(0,0,0,0.2)] overflow-hidden"
+                            >
+                              <ul role="listbox" className="p-1">
+                                {budgetOptions.map((option) => {
+                                  const isActive =
+                                    formData.budget === option.value;
+                                  return (
+                                    <li key={option.value}>
+                                      <button
+                                        type="button"
+                                        role="option"
+                                        aria-selected={isActive}
+                                        onClick={() => {
+                                          handleInputChange(
+                                            "budget",
+                                            option.value,
+                                          );
+                                          setIsBudgetOpen(false);
+                                        }}
+                                        className={`w-full rounded-sm px-3 py-2 text-left text-sm transition-colors ${
+                                          isActive
+                                            ? "bg-black/10 text-black"
+                                            : "text-black/90 hover:bg-white/[0.10]"
+                                        }`}
+                                      >
+                                        {option.label}
+                                      </button>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </motion.div>
+                          ) : null}
+                        </AnimatePresence>
+                      </div>
                     </div>
 
                     <button
@@ -687,7 +786,7 @@ const Index = () => {
               onClick={() =>
                 window.open(
                   "https://api.whatsapp.com/message/BHJAPBNTM5SKJ1?autoload=1&app_absent=0",
-                  "_blank"
+                  "_blank",
                 )
               }
               className="bg-green-500 hover:bg-green-600 text-black rounded-full font-semibold px-8 py-4 text-base mt-8 transition-colors flex items-center gap-3 max-md:text-sm"
