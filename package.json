@@ -6,6 +6,7 @@
   "engines": { "node": "24.x" },
   "scripts": {
     "compress-images": "node scripts/compress-and-update-data.js",
+    "sync-cosmos": "node scripts/sync-cosmos.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
